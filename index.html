@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nano Blog</title>
+    <meta
+      name="description"
+      content="Nano Blog"
+    />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="https://unpkg.com/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
+  </head>
+
+<body>
+
+    <!-- Hero -->
+    <div class="hero" data-theme="dark">
+      <nav class="container-fluid">
+        <ul>
+          <li>
+            <a href="https://hernan.amiune.com/nano-blog/" class="contrast"><strong>Blog</strong></a>
+          </li>
+        </ul>
+        <ul>
+          <li><a href="#" class="contrast">Blog</a></li>
+          <li>
+            <details role="list" dir="rtl">
+              <summary aria-haspopup="listbox" role="link" class="contrast">Theme</summary>
+              <ul role="listbox">
+                <li><a href="#" data-theme-switcher="light">Light</a></li>
+                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- ./ Hero -->
+  
+
+    <main class="container">
+        <section>
+          <div id="content"></div>
+        </section>
+    </main>
+
+    <script src="js/nano-blog.js"></script>
+    <script src="js/minimal-theme-switcher.js"></script>
+</body>
+</html>
