@@ -7,7 +7,7 @@
  * Licensed under MIT
  */
 
-const BLOG_URL = "https://hernan.amiune.com/blog/";
+const BLOG_URL = "https://hernan.amiune.com/nano-blog/";
 const REPO_ADDRESS = "amiune/nano-blog";
 
 function slug_to_title(slug) {
