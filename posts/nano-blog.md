@@ -12,13 +12,13 @@ It consists of one html page and the following js script:
 
 ```js
 
-const BLOG_URL = "YOUR_BLOG_URL"; // example: "https://hernan.amiune.com/blog/"
+const BLOG_URL = "YOUR_BLOG_URL"; // example: "https://hernan.amiune.com/nano-blog/"
 const REPO_ADDRESS = "YOUR_GITHUB_REPOSITORY_ADDRESS"; // example: "amiune/nano-blog";
 
 function slug_to_title(slug) {
-    var words = slug.split('-');
-    for (var i = 0; i < words.length; i++) {
-      var word = words[i];
+    let words = slug.split('-');
+    for (let i = 0; i < words.length; i++) {
+      let word = words[i];
       words[i] = word.charAt(0).toUpperCase() + word.slice(1);
     }
     return words.join(' ');
@@ -38,8 +38,8 @@ function reload_page(){
 
         fetch(markdown_to_fetch).then(async (response) => {
             if (response.ok) {
-                text = await response.text()
-                var md = window.markdownit();
+                text = await response.text();
+                let md = window.markdownit();
                 document.getElementById('content').innerHTML = md.render(text);
             }
             else{
@@ -49,7 +49,7 @@ function reload_page(){
                 metaRobots.name = 'robots';
                 metaRobots.content = 'noindex';
                 document.head.appendChild(metaRobots);
-                var md = window.markdownit();
+                let md = window.markdownit();
                 document.getElementById('content').innerHTML = md.render("# 404: Page not found");
             }
         })
@@ -63,7 +63,7 @@ function reload_page(){
                 files_list = json_response.tree;
                 let list = document.createElement("ul");
                 // show posts from oldest to newest
-                for (let i = files_list.length - 1; i >= 0; i--) {
+                for (let i = 0; i < files_list.length; i++) {
                     const element = files_list[i];
                     if(element.path.includes("posts/")){
                         let li = document.createElement('li');
@@ -71,7 +71,7 @@ function reload_page(){
                         let slug = file_name.replace(".md","");
                         let a = document.createElement('a');
                         a.innerText = slug_to_title(slug);
-                        a.setAttribute("href", BLOG_URL + "#!" + slug)
+                        a.setAttribute("href", BLOG_URL + "#!" + slug);
                         li.appendChild(a);
                         list.appendChild(li);
                     }
@@ -92,7 +92,7 @@ window.addEventListener('popstate', function (event) {
     reload_page();
 });
 
-reload_page()
+reload_page();
 
 ```
 
