@@ -8,10 +8,9 @@
       name="description"
       content="Nano Blog"
     />
-    <link rel="shortcut icon" href="img/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
     <link rel="stylesheet" href="css/custom.css" />
-    <script src="https://unpkg.com/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
   </head>
 
 <body>
@@ -43,10 +42,17 @@
 
     <main class="container">
         <section>
-          <div id="content"></div>
+          <div id="content">
+            <section id="progress">
+              <h1>Loading Content</h1>
+              <progress id="progress-2"></progress>
+            </section>
+          </div>
         </section>
     </main>
 
+    <script src="https://unpkg.com/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="js/nano-blog.js"></script>
     <script src="js/minimal-theme-switcher.js"></script>
 </body>
