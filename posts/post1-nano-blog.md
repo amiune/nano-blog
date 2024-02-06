@@ -31,10 +31,10 @@ function reload_page(){
 
     if(url.includes("#!")){
         // show blog post
-        slug = url.split("#!")[1];
-        slug = slug.replace("?","");
-        slug = slug.replace("#","");
-        markdown_to_fetch = BLOG_URL + "posts/" + slug + ".md";
+        post_name = url.split("#!")[1];
+        post_name = post_name.replace("?","");
+        post_name = post_name.replace("#","");
+        markdown_to_fetch = BLOG_URL + "posts/" + post_name + ".md";
 
         fetch(markdown_to_fetch).then(async (response) => {
             if (response.ok) {
@@ -53,14 +53,6 @@ function reload_page(){
                 document.getElementById('content').innerHTML = md.render("# 404: Page not found");
             }
         })
-
-        // Save pageview in google analytics
-        if (typeof gtag !== "undefined") {
-            gtag('event', 'page_view', {
-                page_title: slug_to_title(slug),
-                page_location: window.location.href
-            });
-        }
     }
     else{
         // show blog list of posts
@@ -92,10 +84,8 @@ function reload_page(){
                 document.getElementById('content').innerHTML = div.innerHTML;
             });
     }
+        
     
-    if (typeof window.Prism !== "undefined") {
-        setTimeout(window.Prism.highlightAll,1000);
-    }
 }
 
 window.addEventListener('popstate', function (event) {
@@ -130,4 +120,4 @@ And the following html page:
 
 ```
 
-This example use Pico.css for the Theme and Prism.js for the code highlitghting.
+This example use Pico.css for the Theme
