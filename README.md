@@ -1,6 +1,6 @@
 # Nano Blog
 
-Minimal javascript ajax blog for github pages using markdown for posts.
+Minimal javascript ajax blog for github pages using markdown for posts. See [live demo here](https://hernan.amiune.com/nano-blog/#!post1-nano-blog) 
 
 The goals of nano blog are:
 - Easy to deploy (no installation or builds)
