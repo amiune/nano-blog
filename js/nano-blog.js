@@ -9,8 +9,13 @@
 
 const BLOG_URL = "https://hernan.amiune.com/nano-blog/";
 const REPO_ADDRESS = "amiune/nano-blog";
+const ORDER_NEW_POSTS_FIRST = false;
+
 
 function slug_to_title(slug) {
+    // The first part of the slug is used to save the date
+    // this allows to order the posts
+    slug = slug.substring(slug.indexOf("-")+1);
     let words = slug.split('-');
     for (let i = 0; i < words.length; i++) {
       let word = words[i];
@@ -25,7 +30,7 @@ function reload_page(){
     markdown_to_fetch = "";
 
     if(url.includes("#!")){
-        // show blog post
+        // Show blog post
         slug = url.split("#!")[1];
         slug = slug.replace("?","");
         slug = slug.replace("#","");
@@ -58,12 +63,13 @@ function reload_page(){
         }
     }
     else{
-        // show blog list of posts
+        // Show blog list of posts
         url = "https://api.github.com/repos/" + REPO_ADDRESS + "/git/trees/main?recursive=1";
         fetch(url)
             .then((response) => response.json())
             .then((json_response) => {
                 files_list = json_response.tree;
+                if(ORDER_NEW_POSTS_FIRST)files_list.reverse();
                 let list = document.createElement("ul");
                 // show posts from oldest to newest
                 for (let i = 0; i < files_list.length; i++) {
@@ -88,6 +94,7 @@ function reload_page(){
             });
     }
     
+    // Highlight code if Prismjs is loaded
     if (typeof window.Prism !== "undefined") {
         setTimeout(window.Prism.highlightAll,1000);
     }
