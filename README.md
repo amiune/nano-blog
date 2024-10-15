@@ -1,6 +1,6 @@
 # Nano Blog
 
-Minimal javascript ajax blog for github pages using markdown for posts. See [live demo here](https://hernan.amiune.com/nano-blog/#!post1-nano-blog) 
+Minimal javascript ajax blog for github pages using markdown for posts. See [live demo here](https://hernan.amiune.com/nano-blog/) 
 
 The goals of nano blog are:
 - Easy to deploy (no installation or builds)
@@ -14,8 +14,12 @@ It consists of one html page and the following js script:
 
 const BLOG_URL = "YOUR_BLOG_URL"; // example: "https://hernan.amiune.com/nano-blog/"
 const REPO_ADDRESS = "YOUR_GITHUB_REPOSITORY_ADDRESS"; // example: "amiune/nano-blog";
+const ORDER_NEW_POSTS_FIRST = false;
 
 function slug_to_title(slug) {
+    // The first part of the slug is used to save the date
+    // this allows to order the posts
+    slug = slug.substring(slug.indexOf("-")+1);
     let words = slug.split('-');
     for (let i = 0; i < words.length; i++) {
       let word = words[i];
@@ -30,7 +34,7 @@ function reload_page(){
     markdown_to_fetch = "";
 
     if(url.includes("#!")){
-        // show blog post
+        // Show blog post
         slug = url.split("#!")[1];
         slug = slug.replace("?","");
         slug = slug.replace("#","");
@@ -53,14 +57,23 @@ function reload_page(){
                 document.getElementById('content').innerHTML = md.render("# 404: Page not found");
             }
         })
+
+        // Save pageview in google analytics
+        if (typeof gtag !== "undefined") {
+            gtag('event', 'page_view', {
+                page_title: slug_to_title(slug),
+                page_location: window.location.href
+            });
+        }
     }
     else{
-        // show blog list of posts
+        // Show blog list of posts
         url = "https://api.github.com/repos/" + REPO_ADDRESS + "/git/trees/main?recursive=1";
         fetch(url)
             .then((response) => response.json())
             .then((json_response) => {
                 files_list = json_response.tree;
+                if(ORDER_NEW_POSTS_FIRST)files_list.reverse();
                 let list = document.createElement("ul");
                 // show posts from oldest to newest
                 for (let i = 0; i < files_list.length; i++) {
@@ -84,8 +97,11 @@ function reload_page(){
                 document.getElementById('content').innerHTML = div.innerHTML;
             });
     }
-        
     
+    // Highlight code if Prismjs is loaded
+    if (typeof window.Prism !== "undefined") {
+        setTimeout(window.Prism.highlightAll,1000);
+    }
 }
 
 window.addEventListener('popstate', function (event) {
@@ -93,7 +109,6 @@ window.addEventListener('popstate', function (event) {
 });
 
 reload_page();
-
 ```
 
 And the following html page:
