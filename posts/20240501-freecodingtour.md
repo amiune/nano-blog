@@ -1,19 +1,19 @@
 # FreeCodingTour.com
 
-Como profesor de programacion e inteligencia artificial para alumnos sin conocimiento previo y tambien universitarios siempre me enfrento con dos problemas:
+As a programming and artificial intelligence teacher for students with no prior knowledge, as well as university students, I always face two problems:
 
-1. diferentes ritmos de aprendizaje de cada alumno
-2. contenido nuevo constante
+1. Different learning paces for each student
+2. Constantly new content
 
-[FreeCodingTour.com](https://www.freecodingtour.com) intenta resolver esos problemas de la siguiente forma:
+[FreeCodingTour.com](https://www.freecodingtour.com) tries to solve these problems in the following way:
 
-- guia practica de problemas con soluciones para avanzar de forma autonoma
-- contenido actualizado, gratuito y en espanol para todos los alumnos, actuales y anteriores
+- Practical guide with problems and solutions to progress independently
+- Updated, free content in Spanish for all students, current and former
 
-A partir de esto surge un nuevo objetivo que es acercar este material didáctico y gratuito a los hispanohablantes ya que la mayoría de los cursos de programación gratuitos están en inglés y que el avance de la computación y la inteligencia artificial hace que los sectores más vulnerables de habla hispana vayan quedando retrasados si no pueden aprender a utilizar estas nuevas herramientas. FreeCodingTour.com es un granito de arena para ayudar a personas de diferentes formaciones y ambitos que quieren aprender a utilizarlas.
+From this, a new goal emerges: to bring this free educational material to Spanish speakers, as the majority of free programming courses are in English. The advancement of computing and artificial intelligence is causing the most vulnerable Spanish-speaking sectors to fall behind if they cannot learn to use these new tools. FreeCodingTour.com is a small contribution to help people from different backgrounds who want to learn how to use them.
 
-Estos cursos no son un reemplazo de otros cursos y mucho menos del acompañamiento presencial de profesores.
+These courses are not a replacement for other courses, much less for the in-person support of teachers.
 
-Donde seguir aprendiendo?
+Where to continue learning?
 
-Hay mucho material gratuito y de excelente calidad, sobre todo en ingles, incluso de universidades muy prestigiosas. En cada curso de freecodingtour veras varias referencias relacionadas con dichos cursos donde podras seguir aprendiendo.
+There is a lot of free, high-quality material, especially in English, even from very prestigious universities. In each freecodingtour course, you will see several references related to those courses where you can continue learning.

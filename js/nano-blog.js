@@ -9,7 +9,7 @@
 
 const BLOG_URL = "https://hernan.amiune.com/nano-blog/";
 const REPO_ADDRESS = "amiune/nano-blog";
-const ORDER_NEW_POSTS_FIRST = false;
+const ORDER_NEW_POSTS_FIRST = true;
 
 
 function slug_to_title(slug) {
