@@ -1,4 +1,4 @@
-## Natural Languages, Formal Languages, and AI Testing
+# Natural Languages, Formal Languages, and AI Testing
 
 I often like to use this quote by Richard Feynman:
 
